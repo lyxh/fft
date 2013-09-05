@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="stylesheets/styles.css" type="text/css" media="screen">
+		<title>Ticket</title>
+      <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		 <link rel="stylesheet" href="jquery/css/custom-theme/jquery-ui-1.10.2.custom.css" type="text/css" media="all">
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+		
+        <link type="text/css" href="tickets.css" rel="stylesheet" />
+		<script type="text/javascript" src="tickets.js"></script>
+       <!--< <script src="http://code.jquery.com/jquery-latest.js"></script>-->
+       <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+	  
+	  <script>
+			  $(document).ready(function(){
+				$("#firstForm").validate();
+				$("#secForm").validate();
+			  });	 
+	  </script>
+</head>
+
+<body>	
+<header>
+
+
+
+
+
+
+	<article>
+				<!-- <div class="container">
+					<a href="#" class="brand">Aquarium Logo</a>
+				</div> -->
+
+				<div class="container" >
+					<ul class="row-fluid">
+						<li class="span3">
+							<div  class="box" onclick="location.href='index.html';" style="cursor:pointer;">
+								<h3>SEARCH</h3>
+								<!--<p>
+									text.
+								</p>-->
+							</div>
+						</li>
+						<li class="span3">
+							<div id="active" class="box" onclick="location.href='tickets.html';" style="cursor:pointer;">
+								<h3>TICKETS</h3>
+								<!--<p>
+									text.
+								</p>-->
+							</div>
+						</li>
+						<li class="span3"> 
+							<div class="box" onclick="location.href='map.html';" style="cursor:pointer;">
+								<h3>MAP</h3>
+								<!--<p>
+									text.
+								</p>-->
+							</div>
+						</li>
+						<li class="span3"> 
+							<div class="box" onclick="location.href='events.html';" style="cursor:pointer;">
+								<h3>EVENTS</h3>
+								<!--<p>
+									text.
+								</p>-->
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+
+			</article>
+
+
+
+
+	<section class="container">
+		<div class="row">	
+             <div id="ticket_selection" class="span6">			
+				<h1>Ticket Information</h1>
+				<form  class="form-horizontal" id="firstForm">
+						<div class="control-group">
+								  <label class="control-label" for="datepicker"style="width:150px">Date</label>
+								  <div class="controls" style="margin-left: 100px">
+									   <input type="text" id="datepicker" name="date"/>
+								  </div>
+						</div>
+				
+
+						<div class="control-group" >
+						   <label class="control-label" for="adult_number" style="width:150px">Number</label> 
+						   <div class="controls" style="margin-left: 100px">
+								<input type="number" maxlength="3"  min="0" max="100" step="1" id="adult_number" class="required digits" name="adultticket"/> 
+								<div><span>Adult: $10/ticket</span></div>
+							</div>
+						</div>      
+						
+						<div class="control-group" >   				
+							 <label class="control-label" for="child_number" style="width:150px">  </label>
+							 <div class="controls" style="margin-left: 100px">
+								 <input id="child_number" type="number" maxlength="3" step="1" min="0" max="100" class="required digits" name="childticket"/> 
+								 <div > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								        <span text-align="right">Child (age 3-12): $5/ticket</span>
+								</div>
+							 </div>
+						</div>
+					   
+					   
+					   	<div class="control-group">
+								  <label class="control-label" for="cemail"style="width:150px">Email</label>
+								  <div class="controls" style="margin-left: 10px">
+									   <input type="text" id="cemail" name="email"  class="required email"/>
+								  </div>
+						</div>
+
+			    </form>	
+				<div class="control-group" style="margin-left:100px; color:blue; font-size:20px;">Total Price: <span id="price" float="right"> $0</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+				
+			 </div><!--end of div for ticket selection-->
+		
+			 <div id="payment" class="span6">			
+				<h1>Billing Information</h1>
+				<form class="form-horizontal" id="secForm">
+					 <div class="control-group">
+					<label class="control-label" for="name" style="width:160px">Credit Card Type</label>
+						  <div class="controls" style="margin-left: 100px">
+				             <select id="cc_type" tabindex="11" name="cc_type">
+								 <option value="amex">American Express</option>
+								 <option value="discover">Discover</option>
+								 <option value="mastercard">MasterCard</option>
+								 <option value="visa">Visa</option>
+							 </select>
+				     </div>
+				</div>
+				
+					<div class="control-group">
+						  <label class="control-label" for="name" style="width:160px">Card Holder Name</label>
+						  <div class="controls" style="margin-left: 100px">
+							   <input type="text" id="name" class="required" name="cardholername">
+						  </div>
+					</div>
+
+				   <div class="control-group">
+					   <label class="control-label" for="ccreditcard" style="width:160px">Card Number</label> 
+					   <div class="controls" style="margin-left: 100px">
+							<input type="text" id="ccreditcard" class="required digits" name="creditcard" maxlength="19" minlength="12"/> 
+					   </div>
+				   </div>
+
+				   <div class="control-group">
+					  <label class="control-label" for="expiration" style="width:160px">Expiration Date</label>
+					  <div class="controls" style="margin-left: 100px" >
+						
+						<select type="month" id="month" name="cardmonth">				
+								<option>Jan</option>
+								<option>Feb</option>
+								<option>Mar</option>
+								<option>Apri</option>
+								<option>May</option>
+								<option>Jun</option>
+								<option>Jul</option>
+								<option>Aug</option>
+								<option>Sep</option>
+								<option>Oct</option>
+								<option>Nov</option>
+								<option>Dec</option>
+						</select> 
+						&nbsp&nbsp
+						<select type="month" id="year" name="cardyear">
+							<option>2013</option>
+							<option>2014</option>
+							<option>2015</option>
+							<option>2016</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+						</select>
+						  
+					  </div>
+				 </div>
+				  <div class="control-group">
+					  <label class="control-label" for="code" style="width:160px">Security Code</label>
+					  <div class="controls" style="margin-left: 100px" >
+							   <input type="text" id="code" maxlength="3" minlength="3" class="required digits" name="securitycode">
+							   <p id="codeerror"></p>
+					  </div>
+				 </div>
+				 <div class="control-group">
+					  <label class="control-label" for="zip_code" style="width:160px">Billing Zip Code</label>
+					  <div class="controls" style="margin-left: 50px">
+						   <input type="text" id="zip_code" maxlength="5" minlength="5" class="required digits" name="zipcode">
+					  </div>
+				 </div>				
+				 <br/>				    
+				<p>You will be able to review your order before buying it.</p>
+				<br>
+				<button type="button" class="btn btn-gold" style="margin-left:170px" onclick="myFunction()" >Purchase</button>
+			  </form>
+			</div><!--end of payment div-->
+			
+			
+                 
+    </div><!--end of span8-->
+	
+	
+	<div class="dialog" title="Review your order">
+			<span id="ticket_number" float="right"></span> 
+			<br>
+			<span id="count1" float="right"></span> 
+			<br>
+			<span id="totalprice" float="right"></span> 
+			<br>
+	<!--		<script>
+			        var adult = window.localStorage.getItem("adult");
+					var child = window.localStorage.getItem("child");
+					var price = window.localStorage.getItem("price");
+					var cstr= "";
+					var astr= "";
+					if (child==0){ }
+					else if (child==1){ cstr=child+ " Child.";}
+					else {cstr=child+ " Children.";}
+
+					if (adult==0){ }
+					else if (adult==1){ astr=adult+ " Adult;   "}
+					else {astr=adult+ " Adults;  "}		
+					
+					 $("#count1").text( "Tickets for " +astr+cstr);
+					  $("#totalprice").text( "Total price is " + price + "."); 
+			</script>
+				-->
+	  </div>
+
+	
+	
+	</section>
+</header>
+	</body>
+</html>

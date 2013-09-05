@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Ticket</title>
+		<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<script src="flot/jquery.flot.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        	<link type="text/css" href="tickets.css" rel="stylesheet" />
+		<script type="text/javascript" src="fft.js"></script>
+<script type="text/javascript" src="Complex.js"></script>
+	</head>
+	<body>
+ <?php
+ include 'header.php';
+ ?>
+  		<div id ="wrapper">			
+			<h3>
+				Plot the wave and its fourier transform
+			</h3>
+			
+			 <div width="200px" style="float:left">
+			<form class="form-inline" role="form">
+			  <div class="form-group">
+				<label class="sr-only" for="exampleInputEmail2">Bits:</label>
+				<input type="text" class="form-control" id="raw_data" placeholder="ex:010101001111">
+			  </div>
+
+			</form>
+			</div >
+			
+			
+			<div width=100px" >
+               &nbsp
+				<button id="enter"  type="submit" class="btn btn-info" >Enter</button>
+			    
+			 </div>
+			  &nbsp
+			   <br>
+			  <div style="width:450px;height:200px">
+			      <div id= "y1" style="width:50px;height:200px;float:left"> </div>
+			      <div id="placeholder1" style="width:400px;height:200px;float:left"></div>
+			       
+			 </div>
+			 <div id="title1"> </div>
+			 <br>
+			 <br>
+			 <div style="width:450px, float:left" >
+				 <div id="placeholder2" style="width:400px;height:200px" style="float:left"></div>
+				  <div id="title2" style="float:left"> </div>
+			  
+			  </div>
+    </div>
+ <script>
+
+ </script>
+	</body>
+</html>
